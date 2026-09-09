@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#f6f8f4">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%20%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%23ffffff%22/%3E%20%3Cpath%20d%3D%22M%2068%2032%20A%2026%2026%200%201%200%2068%2068%22%20fill%3D%22none%22%20stroke%3D%22%231c2a1f%22%20stroke-width%3D%2211%22%20stroke-linecap%3D%22round%22/%3E%20%3Ccircle%20cx%3D%2246%22%20cy%3D%2250%22%20r%3D%229%22%20fill%3D%22%233a9d5d%22/%3E%3C/svg%3E">
+<!-- manifest per poder-la instal·lar com a app-->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/cartly-logo.png">
 <title>Cartly</title>
 
 <script>
@@ -2673,6 +2676,11 @@ function enterApplication(username) {
         }
     });
 })();
+
+// registrem el service worker per tenir l'app offline
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+}
 </script>
 </body>
 </html>
